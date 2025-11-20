@@ -1,0 +1,22 @@
+{
+  "name": "agent",
+  "version": "0.1.0",
+  "description": "ReAct Agent implemented in TypeScript",
+  "main": "dist/agent.js",
+  "scripts": {
+    "build": "tsc",
+    "dev": "ts-node ./src/agent.ts"
+  },
+  "keywords": ["agent", "react", "openai"],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "openai": "^4.28.0",
+    "dotenv": "^16.4.5"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.19",
+    "typescript": "^5.3.3",
+    "ts-node": "^10.9.2"
+  }
+}
