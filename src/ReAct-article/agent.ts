@@ -227,24 +227,11 @@ export class ReActAgent {
 
         return osMap[os.platform()] || 'Unknown';
     }
-
-    private promptUser(question: string): Promise<string> {
-        const readline = require('readline');
-        const rl = readline.createInterface({
-            input: process.stdin,
-            output: process.stdout
-        });
-
-        return new Promise((resolve) => {
-            rl.question(question, (answer: string) => {
-                rl.close();
-                resolve(answer);
-            });
-        });
-    }
 }
 
-// 工具函数
+// ------------------------工具函数------------------------
+
+// 绘制图片
 export function drawImage(desc: string): string {
     const images = [
         'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/difference/diagram.svg',
@@ -259,6 +246,7 @@ export function drawImage(desc: string): string {
     return `图片绘制成功，图片 url:${images[index]}`;
 }
 
+// 写入到 markdown 文件
 export function writeToMd(filePath: string, content: string): string {
     /**将指定内容写入指定文件，如果文件不存在则先创建*/
     try {
@@ -278,6 +266,7 @@ export function writeToMd(filePath: string, content: string): string {
     }
 }
 
+// 检查是否可以写入
 export function checkCanWrite(fileName: string): string {
     /**检查文件是否可以写入，检查output文件夹下是否已存在该文件*/
     // 获取当前运行文件所在目录
