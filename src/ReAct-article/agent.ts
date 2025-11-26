@@ -55,6 +55,7 @@ export class ReActAgent {
                 throw new Error('模型未输出 <Action>');
             }
             const action = actionMatch[1];
+            // 从 Action 中解析出工具名和参数
             const [toolName, args] = this.parseAction(action);
 
             console.log(`\n\n🔧 Action: ${toolName}(${args.join(', ')})`);
