@@ -5,7 +5,8 @@
   "main": "dist/agent.js",
   "scripts": {
     "build": "tsc",
-    "dev": "ts-node ./src/agent.ts"
+    "dev:code": "ts-node ./src/ReAct-code/agent.ts",
+    "dev:article": "ts-node ./src/ReAct-article/agent.ts"
   },
   "keywords": ["agent", "react", "openai"],
   "author": "",
